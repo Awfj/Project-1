@@ -1,0 +1,34 @@
+.wrapper {
+	width: 920px;
+	max-width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#portfolio, #about, #contact {
+	padding: 3.5em 0;
+}
+
+.titles {
+	h3, p {
+		margin: 0;
+		font-weight: 400;
+	}
+	h3 {
+		font-size: 1.6em;
+		padding-bottom: .5em;
+	}
+	p {
+		padding-bottom: 2.5em;
+	}
+}
+
+.active {
+	background: $main;
+	color: $white !important;
+	transition: all .3s ease-in-out;
+}
+
+.menu {
+	display: none;
+}

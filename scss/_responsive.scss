@@ -1,0 +1,118 @@
+@media only screen and (max-width: 900px) {
+	#about {
+		.content {
+			.workers {
+				margin: 0 .5em;
+				width: 200px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.active {
+		background: $main;
+		color: $white;
+	}
+	#main_nav {
+		display: none;
+	}
+	.menu {
+		display: block;
+		float: right;
+		border: none;
+		outline: none;
+		padding: .2em 0 0;
+		cursor: pointer;
+		background: transparent;
+		color: $dark_grey;
+		font-size: 2em;
+	}
+	#main_nav.active_menu{
+		display: block;
+		width: 100%;
+		a {
+			text-align: left;
+			display: block;
+			border-bottom: 1px solid $dark_grey;
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+	
+	#about {
+		.titles p{
+			padding-bottom: 1.5em;
+		}
+		.content {
+			.workers {
+				margin: 1em .3em 0;
+				width: 150px;
+				.some_text {
+					padding: .7em 0 1em;
+					.stuff_titles {
+						padding-bottom: .6em;
+					}	
+					p {
+						font-size: .9em;
+						line-height: 1.2;
+					}
+				}
+			}
+		}
+	}
+
+	#contact {
+		.content {
+			form {
+				float: none;
+				text-align: center;
+				input[placeholder$="name"], 
+				input[placeholder$="email"] {				
+					padding: 1.1em 0 1.1em 1.1em;
+					margin: 0 .7em 1.5em;
+				}
+				input[placeholder$="message"] {
+					margin: 0 auto 1.5em;
+				}
+				input[type="submit"] {
+					float: none;
+					margin: 0 auto 2.5em;
+				}
+			}
+			.info {
+				text-align: center;
+				width: initial;
+				float: none;
+				p {
+					display: none;
+				}
+				li {
+					line-height: 1.5em;
+				 	padding-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 570px) {
+	#about_us {
+		.content {
+			.workers {
+				margin: 0 .5em 2em;
+				width: 300px;
+				img {
+					width: 300px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	footer button {
+		float: none;
+	}
+}
