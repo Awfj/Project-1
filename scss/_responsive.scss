@@ -98,6 +98,9 @@
 }
 
 @media only screen and (max-width: 570px) {
+	#portfolio #portfolio_nav li {
+		margin: 0;
+	}
 	#about_us {
 		.content {
 			.workers {
@@ -112,6 +115,16 @@
 }
 
 @media screen and (max-width: 480px) {
+	#banner #banner_content {
+		padding: 7.1em 0;
+		h1 {
+			font-size: 3em;
+		}
+	}
+	#portfolio #portfolio_nav li {
+		display: block;
+		border: 1px solid;
+	}
 	footer button {
 		float: none;
 	}

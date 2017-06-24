@@ -1,4 +1,7 @@
 $(document).ready(function() {
+	//full height banner
+	var winHeight = $(window).height() - $('#banner').offset().top;
+	$('#banner').css('height', winHeight);
 
 	// hidden menu
 	$('.menu').click(function(i) {

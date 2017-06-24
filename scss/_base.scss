@@ -10,11 +10,11 @@
 }
 
 .titles {
-	h3, p {
+	h2, p {
 		margin: 0;
 		font-weight: 400;
 	}
-	h3 {
+	h2 {
 		font-size: 1.6em;
 		padding-bottom: .5em;
 	}
@@ -31,4 +31,19 @@
 
 .menu {
 	display: none;
+}
+
+.button_hover {
+
+}
+
+.btn {
+	background: $main;
+	color: $white;
+	transition: all .3s ease-in-out;
+	border: none;
+	&:hover {
+		background-color: $active;
+		cursor: pointer;
+	}
 }
