@@ -1,9 +1,5 @@
 $(document).ready(function() {
-	//full height banner
-	var winHeight = $(window).height() - $('#banner').offset().top;
-	$('#banner').css('height', winHeight);
-
-	// hidden menu
+	//header - hidden menu
 	$('.menu').click(function(i) {
 		i.stopPropagation();
 		$('#main_nav').toggleClass('active_menu');
@@ -20,7 +16,21 @@ $(document).ready(function() {
 	    return false;
 	});
 
-	//filter
+	//banner - full height banner
+	var winHeight = $(window).height() - $('#banner').offset().top;
+	$('#banner').css('height', winHeight);
+
+	//banner - scroll down
+	$('.scroll_down').click(function() {
+		var portfolioPos = $('#portfolio').offset().top;
+		$('body, html').animate({scrollTop: portfolioPos}, 800);
+	});
+
+	$('#contact').click(function() {
+		$('#contact').slide();
+	});
+
+	//portfolio - filter
 	$('.filter li[data-design]').click(function() {
 		var design = $(this).data().design;
 		if (design == 'all') {
@@ -37,17 +47,15 @@ $(document).ready(function() {
 		}
 	});
 
-	// scroll down
-	$('.scroll_down').click(function() {
-		var portfolioPos = $('#portfolio').offset().top;
-		$('body, html').animate({scrollTop: portfolioPos}, 800);
+	//contact - inner social
+	$('.img').mouseenter(function() {
+		$('.inner_social', this).addClass('fade').css('display', 'block');
+	});
+	$('.img').mouseleave(function() {
+		$('.inner_social', this).fadeOut(300);
 	});
 
-	$('#contact').click(function() {
-		$('#contact').slide();
-	});
-
-	//scroll up
+	//fotter - scroll up
 	$('#toTop').click(function() {
 		$('body, html').animate({scrollTop: 0}, 800);
 		return false;

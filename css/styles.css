@@ -59,21 +59,10 @@ body {
 
 #main_header {
   padding: 1.6em 0; }
-  #main_header .logo img {
+  #main_header .logo a {
     float: left; }
-  #main_header .logo #header_titles {
-    float: left;
-    margin-left: .7em;
-    padding-top: .3em;
-    color: #444;
-    text-align: left; }
-    #main_header .logo #header_titles .title {
-      font-weight: 700;
-      font-size: 1.3em; }
-    #main_header .logo #header_titles .subtitle {
-      font-size: .9em; }
-  #main_header .logo h1, #main_header .logo p {
-    margin: 0; }
+    #main_header .logo a img {
+      float: left; }
   #main_header #main_nav {
     float: right;
     padding-top: .9em; }
@@ -163,8 +152,47 @@ body {
     width: 220px;
     max-width: 100%;
     display: inline-block; }
-    #about .content .workers img {
-      max-width: 100%; }
+    #about .content .workers .img {
+      background-color: black;
+      position: relative; }
+      #about .content .workers .img img {
+        max-width: 100%;
+        cursor: pointer;
+        float: left; }
+      #about .content .workers .img .inner_social {
+        background-color: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 1em 0;
+        display: none;
+        padding: 5.5em 0; }
+        #about .content .workers .img .inner_social a {
+          color: #fff;
+          font-size: 1.5em;
+          margin: 0 .2em;
+          -webkit-transition: all .2s ease-in-out;
+          -o-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out; }
+          #about .content .workers .img .inner_social a:hover {
+            color: #1bbc9b; }
+    #about .content .workers .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: .5s;
+      animation-name: fade;
+      animation-duration: .5s; }
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .1; }
+  to {
+    opacity: 1; } }
+
+@keyframes fade {
+  from {
+    opacity: .1; }
+  to {
+    opacity: 1; } }
     #about .content .workers h4, #about .content .workers h5, #about .content .workers p {
       margin: 0 .7em;
       font-weight: 400; }
@@ -191,13 +219,13 @@ body {
     float: left;
     text-align: left;
     max-width: 100%; }
-    #contact .content form input::-webkit-input-placeholder {
+    #contact .content form input::-webkit-input-placeholder, #contact .content form textarea::-webkit-input-placeholder {
       color: #bec3c7; }
-    #contact .content form input::-moz-placeholder {
+    #contact .content form input::-moz-placeholder, #contact .content form textarea::-moz-placeholder {
       color: #bec3c7; }
-    #contact .content form input:-ms-input-placeholder {
+    #contact .content form input:-ms-input-placeholder, #contact .content form textarea:-ms-input-placeholder {
       color: #bec3c7; }
-    #contact .content form input::placeholder {
+    #contact .content form input::placeholder, #contact .content form textarea::placeholder {
       color: #bec3c7; }
     #contact .content form input[placeholder$="name"],
     #contact .content form input[placeholder$="email"] {
@@ -209,7 +237,7 @@ body {
       font-size: .85em;
       width: 215px;
       max-width: 100%; }
-    #contact .content form input[placeholder$="message"] {
+    #contact .content form textarea {
       display: block;
       padding: .8em 0 9em .8em;
       margin: 0 1.5em 1.5em 0;
@@ -217,7 +245,8 @@ body {
       font-style: italic;
       font-size: .85em;
       width: 450px;
-      max-width: 100%; }
+      max-width: 100%;
+      resize: none; }
     #contact .content form input[type="submit"] {
       float: right;
       margin-right: 1.7em;
@@ -257,6 +286,8 @@ footer {
       margin: 0 .2em; }
   footer button {
     float: right;
+    width: 44px;
+    height: 44px;
     padding: 0;
     border: none;
     outline: none;
@@ -313,7 +344,7 @@ footer {
     #contact .content form input[placeholder$="email"] {
       padding: 1.1em 0 1.1em 1.1em;
       margin: 0 .7em 1.5em; }
-    #contact .content form input[placeholder$="message"] {
+    #contact .content form textarea {
       margin: 0 auto 1.5em; }
     #contact .content form input[type="submit"] {
       float: none;

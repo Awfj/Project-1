@@ -4,25 +4,11 @@
 #main_header {
 	padding: 1.6em 0;
 	.logo {
-		img {
+		a {
 			float: left;
-		}
-		#header_titles {
-			float: left;
-			margin-left: .7em;
-			padding-top: .3em;
-			color: $dark_grey;
-			text-align: left;
-			.title {
-				font-weight: 700;
-				font-size: 1.3em;
+			img {
+				float: left;
 			}
-			.subtitle {
-				font-size: .9em;
-			}
-		}
-		h1, p {
-			margin: 0;
 		}
 	}
 	#main_nav {
@@ -131,8 +117,48 @@
 			width: 220px;
 			max-width: 100%;
 			display: inline-block;
-			img {
-				max-width: 100%;
+			.img {
+				background-color: black;
+				position: relative;
+				img {
+					max-width: 100%;
+					cursor: pointer;
+					float: left;
+				}
+				.inner_social {
+					background-color: rgba(transparent, .6);
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					padding: 1em 0;
+					display: none;
+					padding: 5.5em 0;
+					a {
+						color: $white;
+						font-size: 1.5em;
+						margin: 0 .2em;
+						transition: all .2s ease-in-out;
+						&:hover {
+							color: $main;
+						}
+					}
+				}
+			}
+			.fade {
+			  -webkit-animation-name: fade;
+			  -webkit-animation-duration: .5s;
+			  animation-name: fade;
+			  animation-duration: .5s;
+			}
+
+			@-webkit-keyframes fade {
+			  from {opacity: .1} 
+			  to {opacity: 1}
+			}
+
+			@keyframes fade {
+			  from {opacity: .1} 
+			  to {opacity: 1}
 			}
 			h4, h5, p {
 				margin: 0 .7em;
@@ -170,7 +196,7 @@
 			float: left;
 			text-align: left;
 			max-width: 100%;
-			input::placeholder {
+			input::placeholder, textarea::placeholder {
 			  color: $grey;
 			}
 			input[placeholder$="name"], 
@@ -184,7 +210,7 @@
 				width: 215px;
 				max-width: 100%;
 			}
-			input[placeholder$="message"] {
+			textarea{
 				display: block;
 				padding: .8em 0 9em .8em;
 				margin: 0 1.5em 1.5em 0;
@@ -193,6 +219,7 @@
 				font-size: .85em;
 				width: 450px;
 				max-width: 100%;
+				resize: none;
 			}
 			input[type="submit"] {
 				float: right;
@@ -241,6 +268,8 @@ footer {
 	}
 	button {
 		float: right;
+		width: 44px;
+		height: 44px;
 		padding: 0;
 		border: none;
 		outline: none;
