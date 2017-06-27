@@ -2,9 +2,13 @@
 <html>
 <head>
 	<title>Project-1</title>
+	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<link href="css/lightbox.min.css" rel="stylesheet">
+	<link href="css/owl.carousel.min.css" rel="stylesheet">
+	<link href="css/owl.theme.default.min.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 </head>
@@ -16,7 +20,6 @@
 				</div>
 				<button class="menu"><i class="fa fa-bars"></i></button>
 				<nav id="main_nav">
-					<a href="header">Home</a>
 					<a href="#portfolio">Portfolio</a>
 					<a href="#about">About</a>
 					<a href="#contact">Contact</a>
@@ -43,22 +46,116 @@
 				</div>
 
 				<ul id="portfolio_nav" class="filter">
-					<li class="active btn" href="#" data-design="all">All</li>
-					<li class="btn" href="#" data-design="web">Web Design</li>
-					<li class="btn" href="#" data-design=
+					<li class="active btn" data-design="all">All</li>
+					<li class="btn" data-design="web">Web Design</li>
+					<li class="btn" data-design=
 					graphic>Graphic Design</li>
-					<li class="btn" href="#" data-design="flat">Flat Design</li>
+					<li class="btn" data-design="flat">Flat Design</li>
 				</ul>
 
 				<div id="icons">
-					<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-1.png" alt="img-1" data-design="web">
-					<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-2.png"" alt="img-2" data-design="graphic">
-					<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-3.png" alt="img-3" data-design="flat">
-					<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-4.png" alt="img-4" data-design="graphic">
-					<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-5.png" alt="img-5" data-design="web">
-					<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-6.png" alt="img-2" data-design="web">
-					<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-1.png" alt="img-1" data-design="flat">
-					<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-2.png"" alt="img-2" data-design="graphic">
+
+					<div class="icon" data-design="web">
+						<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-1.png" alt="img-1">
+						<a data-lightbox='set' data-title="img-1" href="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-1.png">
+							<div class="inner_all">
+								<div class="inner_content">
+									<img src="https://cdn.rawgit.com/Awfj/Project-1/78e2b1d8/images/search.png" alt="search">
+									<h3>Example Title</h3>
+									<p>Web Design</p>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="icon" data-design="graphic">
+						<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-2.png" alt="img-2">
+						<a data-lightbox='set' data-title="img-2" href="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-2.png">
+							<div class="inner_all">
+								<div class="inner_content">
+									<img src="https://cdn.rawgit.com/Awfj/Project-1/78e2b1d8/images/search.png" alt="search">
+									<h3>Example Title</h3>
+									<p>Web Design</p>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="icon" data-design="flat">
+						<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-3.png" alt="img-3">
+						<a data-lightbox='set' data-title="img-3" href="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-3.png">
+							<div class="inner_all">
+								<div class="inner_content">
+									<img src="https://cdn.rawgit.com/Awfj/Project-1/78e2b1d8/images/search.png" alt="search">
+									<h3>Example Title</h3>
+									<p>Web Design</p>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="icon" data-design="graphic">
+						<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-4.png" alt="img-4">
+						<a data-lightbox='set' data-title="img-4" href="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-4.png">
+							<div class="inner_all">
+								<div class="inner_content">
+									<img src="https://cdn.rawgit.com/Awfj/Project-1/78e2b1d8/images/search.png" alt="search">
+									<h3>Example Title</h3>
+									<p>Web Design</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="icon" data-design="web">
+						<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-5.png" alt="img-5">
+						<a data-lightbox='set' data-title="img-5" href="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-5.png">
+							<div class="inner_all">
+								<div class="inner_content">
+									<img src="https://cdn.rawgit.com/Awfj/Project-1/78e2b1d8/images/search.png" alt="search">
+									<h3>Example Title</h3>
+									<p>Web Design</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="icon" data-design="web">
+						<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-6.png" alt="img-6">
+						<a data-lightbox='set' data-title="img-6" href="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-6.png">
+							<div class="inner_all">
+								<div class="inner_content">
+									<img src="https://cdn.rawgit.com/Awfj/Project-1/78e2b1d8/images/search.png" alt="search">
+									<h3>Example Title</h3>
+									<p>Web Design</p>
+								</div>
+							</div>
+						</a>
+					</div>
+
+					<div class="icon" data-design="flat">
+						<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-1.png" alt="img-7">
+						<a data-lightbox='set' data-title="img-7" href="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-1.png">
+							<div class="inner_all">
+								<div class="inner_content">
+									<img src="https://cdn.rawgit.com/Awfj/Project-1/78e2b1d8/images/search.png" alt="search">
+									<h3>Example Title</h3>
+									<p>Web Design</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="icon" data-design="graphic">
+						<img src="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-2.png" alt="img-8">
+						<a data-lightbox='set' data-title="img-8" href="https://cdn.rawgit.com/Awfj/Project-1/29176564/images/icons/img-2.png">
+							<div class="inner_all">
+								<div class="inner_content">
+									<img src="https://cdn.rawgit.com/Awfj/Project-1/78e2b1d8/images/search.png" alt="search">
+									<h3>Example Title</h3>
+									<p>Web Design</p>
+								</div>
+							</div>
+						</a>
+					</div>
+
 				</div>
 			</div>
 	</section>
@@ -69,7 +166,7 @@
 					<h2>About Us</h2>
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
 				</div>
-				<div class="content slideshow-container">
+				<div class="content owl-carousel owl-theme">
 		
 					<div class="workers">
 						<div class="img cf">
@@ -149,7 +246,7 @@
 				<div class="content">
 					<form>
 						<input type="text" placeholder="Your name"><input type="email" placeholder="Your email">
-						<textarea type="text" placeholder="Your message"></textarea>
+						<textarea placeholder="Your message"></textarea>
 						<input class="btn" type="submit" value="Submit">
 					</form>
 
@@ -181,5 +278,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/lightbox.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
 </body>
 </html>

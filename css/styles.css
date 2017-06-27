@@ -2,10 +2,15 @@ html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+* {
+  margin: 0;
+  border: 0; }
+
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
   box-sizing: inherit; }
 
+*
 .cf:before, .cf:after {
   content: ' ';
   display: table; }
@@ -55,9 +60,11 @@ body {
   border: none; }
   .btn:hover {
     background-color: #16a086;
+    color: #fff !important;
     cursor: pointer; }
 
 #main_header {
+  background-color: #fff;
   padding: 1.6em 0; }
   #main_header .logo a {
     float: left; }
@@ -134,12 +141,48 @@ body {
 
 #portfolio #icons {
   padding-top: 2em; }
-  #portfolio #icons img {
+  #portfolio #icons .icon {
+    display: inline-block;
     width: 170px;
+    position: relative;
+    margin: .5em;
     border-radius: 50%;
-    margin: .9em; }
-    #portfolio #icons img:hover {
-      cursor: pointer; }
+    line-height: 0; }
+    #portfolio #icons .icon img[alt^='img'] {
+      width: 170px;
+      border-radius: 50%;
+      margin: 0; }
+    #portfolio #icons .icon .inner_all {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: rgba(27, 188, 155, 0.6);
+      cursor: pointer;
+      display: none; }
+      #portfolio #icons .icon .inner_all .inner_content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        line-height: 1; }
+        #portfolio #icons .icon .inner_all .inner_content img[alt='search'] {
+          margin: 0; }
+        #portfolio #icons .icon .inner_all .inner_content h3, #portfolio #icons .icon .inner_all .inner_content p {
+          color: #fff;
+          margin: .2em 0 0 0;
+          font-weight: 400;
+          font-size: 1.15em; }
+        #portfolio #icons .icon .inner_all .inner_content p {
+          font-size: 1em; }
 
 #about {
   background: #1bbc9b; }
@@ -147,9 +190,9 @@ body {
     color: #fff; }
   #about .content .workers {
     color: #444;
-    margin: 0 1em;
+    margin: 0;
     background: #fff;
-    width: 220px;
+    width: 85%;
     max-width: 100%;
     display: inline-block; }
     #about .content .workers .img {
@@ -157,16 +200,16 @@ body {
       position: relative; }
       #about .content .workers .img img {
         max-width: 100%;
-        cursor: pointer;
         float: left; }
       #about .content .workers .img .inner_social {
         background-color: rgba(0, 0, 0, 0.6);
         position: absolute;
         width: 100%;
         height: 100%;
-        padding: 1em 0;
+        padding: 50% 0;
         display: none;
-        padding: 5.5em 0; }
+        padding: 50% 0;
+        cursor: pointer; }
         #about .content .workers .img .inner_social a {
           color: #fff;
           font-size: 1.5em;
@@ -176,23 +219,6 @@ body {
           transition: all .2s ease-in-out; }
           #about .content .workers .img .inner_social a:hover {
             color: #1bbc9b; }
-    #about .content .workers .fade {
-      -webkit-animation-name: fade;
-      -webkit-animation-duration: .5s;
-      animation-name: fade;
-      animation-duration: .5s; }
-
-@-webkit-keyframes fade {
-  from {
-    opacity: .1; }
-  to {
-    opacity: 1; } }
-
-@keyframes fade {
-  from {
-    opacity: .1; }
-  to {
-    opacity: 1; } }
     #about .content .workers h4, #about .content .workers h5, #about .content .workers p {
       margin: 0 .7em;
       font-weight: 400; }
@@ -295,11 +321,6 @@ footer {
     footer button img {
       display: block; }
 
-@media only screen and (max-width: 900px) {
-  #about .content .workers {
-    margin: 0 .5em;
-    width: 200px; } }
-
 @media only screen and (max-width: 768px) {
   .active {
     background: #1bbc9b;
@@ -327,16 +348,13 @@ footer {
         border-bottom: none; }
   #about .titles p {
     padding-bottom: 1.5em; }
-  #about .content .workers {
-    margin: 1em .3em 0;
-    width: 150px; }
-    #about .content .workers .some_text {
-      padding: .7em 0 1em; }
-      #about .content .workers .some_text .stuff_titles {
-        padding-bottom: .6em; }
-      #about .content .workers .some_text p {
-        font-size: .9em;
-        line-height: 1.2; }
+  #about .content .workers .some_text {
+    padding: .7em 0 1em; }
+    #about .content .workers .some_text .stuff_titles {
+      padding-bottom: .6em; }
+    #about .content .workers .some_text p {
+      font-size: .9em;
+      line-height: 1.2; }
   #contact .content form {
     float: none;
     text-align: center; }
@@ -361,12 +379,7 @@ footer {
 
 @media only screen and (max-width: 570px) {
   #portfolio #portfolio_nav li {
-    margin: 0; }
-  #about_us .content .workers {
-    margin: 0 .5em 2em;
-    width: 300px; }
-    #about_us .content .workers img {
-      width: 300px; } }
+    margin: 0; } }
 
 @media screen and (max-width: 480px) {
   #banner #banner_content {
@@ -376,5 +389,14 @@ footer {
   #portfolio #portfolio_nav li {
     display: block;
     border: 1px solid; }
+  #portfolio #icons {
+    padding-top: 1em; }
+    #portfolio #icons .icon {
+      width: 100px;
+      margin: .2em; }
+      #portfolio #icons .icon img[alt^='img'] {
+        width: 100px; }
+      #portfolio #icons .icon .inner_all .inner_content {
+        display: none; }
   footer button {
     float: none; } }
