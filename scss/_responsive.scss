@@ -98,6 +98,17 @@
 }
 
 @media screen and (max-width: 480px) {
+	#portfolio, #about, #contact {
+		padding: 3em 0;
+	}
+	.titles {
+		h2 {
+			font-size: 2em;
+		}
+		p {
+			font-size: 1em;
+		}
+	}
 	#banner #banner_content {
 		padding: 7.1em 0;
 		h1 {
@@ -110,7 +121,6 @@
 				border: 1px solid;
 		}
 		#icons {
-			padding-top: 1em;
 			.icon {
 				width: 100px;
 				margin: .2em;

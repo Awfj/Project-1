@@ -2,12 +2,22 @@ $(document).ready(function() {
 	//header - hidden menu
 	$('.menu').click(function(i) {
 		i.stopPropagation();
-		$('#main_nav').toggleClass('active_menu');
+		if (!$('#main_nav').hasClass('active_menu')) {
+			$('#main_nav').addClass('active_menu');
+			$('.active_menu').hide().slideDown(400);
+		} else {
+			$('.active_menu').slideUp(400);
+			function active_menu() {
+				$('#main_nav').removeClass('active_menu');
+			} setTimeout(active_menu, 400);
+		};
 	});
+
 	$(document).click(function() {
 		$('#main_nav').removeClass('active_menu');
 	});
 
+	//nav scroll
 	$('nav').find('a').click(function(){
 	    var $href = $(this).attr('href');
 	    var $anchor = $(''+$href).offset();
@@ -25,7 +35,7 @@ $(document).ready(function() {
 		}
 	});
 
-	//banner - scroll down
+	//scroll down
 	$('.scroll_down').click(function() {
 		var portfolioPos = $('#portfolio').offset().top;
 		$('body, html').animate({scrollTop: portfolioPos}, 800);
@@ -36,17 +46,21 @@ $(document).ready(function() {
 	});
 
 	//portfolio - filter
+	$('.icon[data-design] a').attr('data-lightbox', 'set-all');
 	$('.filter li[data-design]').click(function() {
 		var design = $(this).data().design;
 		if (design == 'all') {
 			$('.icon[data-design]').show();
+			$('.icon[data-design] a').attr('data-lightbox', 'set-all');
 			$('li[data-design='+ design +']').addClass('active');
 			$('li[data-design!='+ design +']').removeClass('active');
 		} else {
 			$('.icon[data-design='+ design +']').show();
+			$('.icon[data-design='+ design +'] a').attr('data-lightbox', 'set-all');
 			$('li[data-design='+ design +']').addClass('active');
 
 			$('.icon[data-design!='+ design +']').hide();
+			$('.icon[data-design!='+ design +'] a').removeAttr('data-lightbox', 'set-all');
 			$('li[data-design!='+ design +']').removeClass('active');
 
 		}
@@ -80,22 +94,21 @@ $(document).ready(function() {
 	$(".owl-carousel").owlCarousel({
 		responsiveClass:true,
 		mouseDrag: true,
+		nav: true,
 		responsive:{
 		        0:{
 		            items:1,
-		            nav:true,
 		            loop: true
 		        },
 		        350:{
 		            items:2,
-		            nav:true,
 		            loop: true
 		        },
 		        600:{
 		            items:3,
-		            nav:false,
 		            loop: false,
-		            mouseDrag: false
+		            mouseDrag: false,
+		            nav: false
 		        }
 		    }
 	});
