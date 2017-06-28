@@ -107,7 +107,7 @@ $(document).ready(function() {
 		        600:{
 		            items:3,
 		            loop: false,
-		            mouseDrag: false,
+		            // mouseDrag: false,
 		            nav: false
 		        }
 		    }
