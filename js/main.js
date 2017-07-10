@@ -12,19 +12,24 @@ $(document).ready(function() {
 		};
 	});
 
-	$(document).on('click', function(event) {
-	  if (!$(event.target).closest('#main_header, .active_menu').length) {
-	  	$('#main_nav').slideUp(400);
-	  	function active_menu() {
-	  		$('#main_nav').removeClass('active_menu');
-	  	} setTimeout(active_menu, 400);
-	  }
+	$(window).on('load, resize', function mobileViewUpdate() {
+		var viewportWidth = $(window).outerWidth();
+		if (viewportWidth < 768) {
+			$(document).on('click', function(event) {
+				if (!$(event.target).closest('#main_header, .active_menu, #main_nav').length) {
+					$('#main_nav').slideUp(400);
+					function active_menu() {
+						$('#main_nav').removeClass('active_menu');
+					} setTimeout(active_menu, 400);
+				}
+			});
+		}
 	});
 
 	$(window).on('load, resize', function mobileViewUpdate() {
 		var viewportWidth = $(window).outerWidth();
 		if (viewportWidth > 768) {
-			$('#main_nav').show('');
+			$('#main_nav').show();
 		}
 	});
 
