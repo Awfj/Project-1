@@ -11,21 +11,21 @@ $(document).ready(function() {
 			} setTimeout(active_menu, 400);
 		};
 	});
-
-	$(window).on('load, resize', function mobileViewUpdate() {
+	
+	//nav <= 768 hide on click
+	$(document).click(function(event){
 		var viewportWidth = $(window).outerWidth();
-		if (viewportWidth < 768) {
-			$(document).on('click', function(event) {
-				if (!$(event.target).closest('#main_header, .active_menu, #main_nav').length) {
-					$('#main_nav').slideUp(400);
-					function active_menu() {
-						$('#main_nav').removeClass('active_menu');
-					} setTimeout(active_menu, 400);
-				}
-			});
+		if (viewportWidth <= 768) {
+			if (!$(event.target).closest('#main_header, .active_menu, #main_nav').length) {
+				$('#main_nav').slideUp(400);
+				function active_menu() {
+					$('#main_nav').removeClass('active_menu');
+				} setTimeout(active_menu, 400);
+			}
 		}
-	});
+	});	
 
+	//nav > 768 hide on click
 	$(window).on('load, resize', function mobileViewUpdate() {
 		var viewportWidth = $(window).outerWidth();
 		if (viewportWidth > 768) {
@@ -35,13 +35,18 @@ $(document).ready(function() {
 
 	//nav scroll
 	$('nav a').click(function(){
-	    var $href = $(this).attr('href');
-	    var $anchor = $($href).offset();
-	    $('body').animate({ scrollTop: $anchor.top - $('#main_nav').outerHeight()}, 1000);
-	    $('.active_menu').slideUp(1000);
-	    function active_menu() {
-	    	$('#main_nav').removeClass('active_menu');
-	    } setTimeout(active_menu, 1000);
+		var $href = $(this).attr('href');
+		var $anchor = $($href).offset();
+		var viewportWidth = $(window).outerWidth();
+		if (viewportWidth > 768) {
+			$('body').animate({ scrollTop: $anchor.top}, 1000);
+		} else {
+			$('body').animate({ scrollTop: $anchor.top - $('#main_nav').outerHeight()}, 1000);
+		}
+		$('.active_menu').slideUp(1000);
+		function active_menu() {
+			$('#main_nav').removeClass('active_menu');
+		} setTimeout(active_menu, 1000);
 	});
 
 	//banner - full height banner
@@ -58,10 +63,6 @@ $(document).ready(function() {
 	$('.scroll_down').click(function() {
 		var portfolioPos = $('#portfolio').offset().top;
 		$('body, html').animate({scrollTop: portfolioPos}, 800);
-	});
-
-	$('#contact').click(function() {
-		$('#contact').slide();
 	});
 
 	//portfolio - filter
@@ -106,6 +107,7 @@ $(document).ready(function() {
 		$('body, html').animate({scrollTop: 0}, 800);
 	});
 
+	//plugins
 	lightbox.option({
 		'positionFromTop': 200
 	});
