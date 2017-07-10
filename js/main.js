@@ -21,11 +21,22 @@ $(document).ready(function() {
 	  }
 	});
 
+	$(window).on('load, resize', function mobileViewUpdate() {
+		var viewportWidth = $(window).outerWidth();
+		if (viewportWidth > 768) {
+			$('#main_nav').show('');
+		}
+	});
+
 	//nav scroll
 	$('nav a').click(function(){
 	    var $href = $(this).attr('href');
 	    var $anchor = $($href).offset();
-	    $('body').animate({ scrollTop: $anchor.top}, 1000);
+	    $('body').animate({ scrollTop: $anchor.top - $('#main_nav').outerHeight()}, 1000);
+	    $('.active_menu').slideUp(1000);
+	    function active_menu() {
+	    	$('#main_nav').removeClass('active_menu');
+	    } setTimeout(active_menu, 1000);
 	});
 
 	//banner - full height banner
