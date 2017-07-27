@@ -11,15 +11,19 @@ html {
 	box-sizing: inherit;
 }
 
-.cf:before, .cf:after {
+.u-clearfix:before, .u-clearfix:after {
 	content: ' ';
 	display: table;
 }
 
-.cf:after {
+.u-clearfix:after {
 	clear: both;
 }
 
 body {
 	font-family: 'Lato', sans-serif;
+}
+
+.owl-carousel {
+	z-index: 0;
 }

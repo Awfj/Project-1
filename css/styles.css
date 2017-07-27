@@ -10,34 +10,37 @@ html {
   -webkit-box-sizing: inherit;
   box-sizing: inherit; }
 
-.cf:before, .cf:after {
+.u-clearfix:before, .u-clearfix:after {
   content: ' ';
   display: table; }
 
-.cf:after {
+.u-clearfix:after {
   clear: both; }
 
 body {
   font-family: 'Lato', sans-serif; }
 
-.wrapper {
+.owl-carousel {
+  z-index: 0; }
+
+.o-wrapper {
   width: 920px;
   max-width: 90%;
   margin: 0 auto;
   text-align: center; }
 
-#portfolio, #about, #contact {
+#portfolio, #about, .c-contact {
   padding: 3.5em 0; }
 
-.titles h2, .titles p {
+.o-title h2, .o-title p {
   margin: 0;
   font-weight: 400; }
 
-.titles h2 {
+.o-title h2 {
   font-size: 2.5em;
   padding-bottom: .5em; }
 
-.titles p {
+.o-title p {
   font-size: 1.1em;
   padding-bottom: 2.5em; }
 
@@ -51,17 +54,24 @@ body {
 .menu {
   display: none; }
 
-.btn {
+.o-btn {
   background: #1bbc9b;
   color: #fff;
   -webkit-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   border: none; }
-  .btn:hover {
+  .o-btn:hover {
     background-color: #16a086;
     color: #fff !important;
     cursor: pointer; }
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  -webkit-box-shadow: 0 1px 20px #444;
+  box-shadow: 0 1px 20px #444; }
 
 #main_header {
   background-color: #fff;
@@ -120,8 +130,7 @@ body {
       display: block; }
     #banner #banner_content .scroll_down {
       border-radius: 50%;
-      border: none;
-      outline: none;
+      border: 5px solid rgba(27, 188, 155, 0.3);
       background: transparent;
       cursor: pointer;
       padding: 0; }
@@ -186,7 +195,7 @@ body {
 
 #about {
   background: #1bbc9b; }
-  #about .titles {
+  #about .o-title {
     color: #fff; }
   #about .content .workers {
     color: #444;
@@ -237,89 +246,91 @@ body {
         line-height: 1.3;
         margin: 0 1em; }
 
-#contact {
+.c-contact {
   background: #ecf0f1; }
-  #contact .titles {
+  .c-contact .o-title {
     color: #444; }
-  #contact .content form {
-    float: left;
-    text-align: left;
-    max-width: 100%; }
-    #contact .content form input::-webkit-input-placeholder, #contact .content form textarea::-webkit-input-placeholder {
-      color: #bec3c7; }
-    #contact .content form input::-moz-placeholder, #contact .content form textarea::-moz-placeholder {
-      color: #bec3c7; }
-    #contact .content form input:-ms-input-placeholder, #contact .content form textarea:-ms-input-placeholder {
-      color: #bec3c7; }
-    #contact .content form input::placeholder, #contact .content form textarea::placeholder {
-      color: #bec3c7; }
-    #contact .content form input[placeholder$="name"],
-    #contact .content form input[placeholder$="email"] {
-      display: inline-block;
-      padding: 1.1em 0 1.1em 1.1em;
-      margin: 0 1.5em 1.5em 0;
-      border: 1.5px solid #bec3c7;
-      font-style: italic;
-      font-size: .85em;
-      width: 215px;
-      max-width: 100%; }
-    #contact .content form textarea {
-      display: block;
-      padding: .8em 0 9em .8em;
-      margin: 0 1.5em 1.5em 0;
-      border: 1.5px solid #bec3c7;
-      font-style: italic;
-      font-size: .85em;
-      width: 450px;
-      max-width: 100%;
-      resize: none; }
-    #contact .content form input[type="submit"] {
-      float: right;
-      margin-right: 1.7em;
-      padding: 1em 2.4em .7em;
-      text-transform: uppercase;
-      font-size: .8em;
-      font-weight: 400;
-      letter-spacing: .15em; }
-  #contact .content .info {
-    text-align: left;
-    list-style: none;
-    width: 200px;
-    margin: 0;
-    padding: 0;
-    float: left;
-    color: #444; }
-    #contact .content .info p {
-      text-transform: uppercase;
-      margin: 0;
-      padding-bottom: 1em; }
-    #contact .content .info li {
-      padding-bottom: 1em;
-      font-size: .95em; }
 
-footer {
+.c-contact__content form {
+  float: left;
+  text-align: left;
+  max-width: 100%; }
+  .c-contact__content form input::-webkit-input-placeholder, .c-contact__content form textarea::-webkit-input-placeholder {
+    color: #bec3c7; }
+  .c-contact__content form input::-moz-placeholder, .c-contact__content form textarea::-moz-placeholder {
+    color: #bec3c7; }
+  .c-contact__content form input:-ms-input-placeholder, .c-contact__content form textarea:-ms-input-placeholder {
+    color: #bec3c7; }
+  .c-contact__content form input::placeholder, .c-contact__content form textarea::placeholder {
+    color: #bec3c7; }
+  .c-contact__content form input[placeholder$="name"],
+  .c-contact__content form input[placeholder$="email"] {
+    display: inline-block;
+    padding: 1.1em 0 1.1em 1.1em;
+    margin: 0 1.5em 1.5em 0;
+    border: 1.5px solid #bec3c7;
+    font-style: italic;
+    font-size: .85em;
+    width: 215px;
+    max-width: 100%; }
+  .c-contact__content form textarea {
+    display: block;
+    padding: .8em 0 9em .8em;
+    margin: 0 1.5em 1.5em 0;
+    border: 1.5px solid #bec3c7;
+    font-style: italic;
+    font-size: .85em;
+    width: 450px;
+    max-width: 100%;
+    resize: none; }
+  .c-contact__content form input[type="submit"] {
+    float: right;
+    margin-right: 1.7em;
+    padding: 1em 2.4em .7em;
+    text-transform: uppercase;
+    font-size: .8em;
+    font-weight: 400;
+    letter-spacing: .15em; }
+
+.c-contact__content .info {
+  text-align: left;
+  list-style: none;
+  width: 200px;
+  margin: 0;
+  padding: 0;
+  float: left;
+  color: #444; }
+  .c-contact__content .info p {
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: 1em; }
+  .c-contact__content .info li {
+    padding-bottom: 1em;
+    font-size: .95em; }
+
+.c-footer {
   background: #2d3e50;
   padding: 1.5em 0;
   position: relative; }
-  footer p {
-    color: white;
-    font-weight: 400;
-    font-size: .95em;
-    float: left;
-    margin: 0 .5em 0 0;
-    padding-top: 1em; }
-    footer p span {
-      margin: 0 .2em; }
-  footer button {
-    float: right;
-    width: 44px;
-    height: 44px;
-    padding: 0;
-    border: none;
-    outline: none;
-    cursor: pointer; }
-    footer button img {
-      display: block; }
+
+.c-footer__btn {
+  float: right;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+.c-footer__copy {
+  color: white;
+  font-weight: 400;
+  font-size: .95em;
+  float: left;
+  margin: 0 .5em 0 0;
+  padding-top: 1em; }
+  .c-footer__copy .c-copy__char {
+    margin: 0 .2em; }
 
 @media only screen and (max-width: 768px) {
   .active {
@@ -337,6 +348,8 @@ footer {
     background: transparent;
     color: #444;
     font-size: 2em; }
+    .menu:focus, .menu:active {
+      background-color: transparent; }
   #main_nav.active_menu {
     display: block;
     width: 100%; }
@@ -355,25 +368,25 @@ footer {
     #about .content .workers .some_text p {
       font-size: .9em;
       line-height: 1.2; }
-  #contact .content form {
+  .c-contact .c-contact__content form {
     float: none;
     text-align: center; }
-    #contact .content form input[placeholder$="name"],
-    #contact .content form input[placeholder$="email"] {
+    .c-contact .c-contact__content form input[placeholder$="name"],
+    .c-contact .c-contact__content form input[placeholder$="email"] {
       padding: 1.1em 0 1.1em 1.1em;
       margin: 0 .7em 1.5em; }
-    #contact .content form textarea {
+    .c-contact .c-contact__content form textarea {
       margin: 0 auto 1.5em; }
-    #contact .content form input[type="submit"] {
+    .c-contact .c-contact__content form input[type="submit"] {
       float: none;
       margin: 0 auto 2.5em; }
-  #contact .content .info {
+  .c-contact .c-contact__content .info {
     text-align: center;
     width: initial;
     float: none; }
-    #contact .content .info p {
+    .c-contact .c-contact__content .info p {
       display: none; }
-    #contact .content .info li {
+    .c-contact .c-contact__content .info li {
       line-height: 1.5em;
       padding-bottom: 0; } }
 
@@ -382,7 +395,7 @@ footer {
     margin: 0; } }
 
 @media screen and (max-width: 480px) {
-  #portfolio, #about, #contact {
+  #portfolio, #about, .c-contact {
     padding: 3em 0; }
   .titles h2 {
     font-size: 2em; }
@@ -402,5 +415,5 @@ footer {
       width: 100px; }
     #portfolio #icons .icon .inner_all .inner_content {
       display: none; }
-  footer button {
+  .c-footer__btn {
     float: none; } }

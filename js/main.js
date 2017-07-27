@@ -39,15 +39,30 @@ $(document).ready(function() {
 		var $anchor = $($href).offset();
 		var viewportWidth = $(window).outerWidth();
 		if (viewportWidth > 768) {
-			$('body').animate({ scrollTop: $anchor.top}, 1000);
+			$('body').animate({ scrollTop: $anchor.top - $('#main_header').outerHeight()}, 1000);
 		} else {
-			$('body').animate({ scrollTop: $anchor.top - $('#main_nav').outerHeight()}, 1000);
+			$('body').animate({ scrollTop: $anchor.top + $('#main_nav').outerHeight() - $('#main_header').outerHeight()}, 1000);
 		}
-		$('.active_menu').slideUp(1000);
+		$('.active_menu').slideUp(300);
 		function active_menu() {
 			$('#main_nav').removeClass('active_menu');
-		} setTimeout(active_menu, 1000);
+		} setTimeout(active_menu, 300);
 	});
+
+	//nav fixed
+	$(window).scroll(sticky_nav());
+	sticky_nav();
+	function sticky_nav() {
+	  var headerOffset = $('#main_header').offset().top;
+	  var scrollPos = $(window).scrollTop();
+	  $('#main_header').wrap('<div class="nav-placeholder"></div>');
+	  $(".nav-placeholder").height($('#main_header').outerHeight());
+	  if (scrollPos >= headerOffset) {
+	    $('#main_header').addClass('fixed');  
+	  } else {
+	    $('#main_header').removeClass('fixed');
+	  }
+	}
 
 	//banner - full height banner
 	/*var winHeight = $(window).height() - $('#banner').offset().top;
@@ -103,7 +118,7 @@ $(document).ready(function() {
 	});
 
 	//footer - scroll up
-	$('#toTop').click(function() {
+	$('.js-footer__btn').click(function() {
 		$('body, html').animate({scrollTop: 0}, 800);
 	});
 

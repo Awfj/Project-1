@@ -16,6 +16,9 @@
 		background: transparent;
 		color: $dark_grey;
 		font-size: 2em;
+		&:focus, &:active {
+			background-color: transparent;
+		}
 	}
 	#main_nav.active_menu{
 		display: block;
@@ -50,8 +53,8 @@
 		}
 	}
 
-	#contact {
-		.content {
+	.c-contact {
+		.c-contact__content {
 			form {
 				float: none;
 				text-align: center;
@@ -98,7 +101,7 @@
 }
 
 @media screen and (max-width: 480px) {
-	#portfolio, #about, #contact {
+	#portfolio, #about, .c-contact {
 		padding: 3em 0;
 	}
 	.titles {
@@ -134,7 +137,7 @@
 		}
 	}
 
-	footer button {
+	.c-footer__btn {
 		float: none;
 	}
 }

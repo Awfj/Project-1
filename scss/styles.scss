@@ -68,8 +68,7 @@
 		}
 		.scroll_down {
 			border-radius: 50%;
-			border: none;
-			outline: none;
+			border: 5px solid rgba($main, 0.3);
 			background: transparent;
 			cursor: pointer;
 			padding: 0;
@@ -144,7 +143,7 @@
 }
 #about {
 	background: $main;
-	.titles {
+	.o-title {
 		color: $white;
 	}
 	.content {
@@ -208,97 +207,98 @@
 		}
 	}
 }
-#contact {
+
+//contact
+.c-contact {
 	background: $light_grey;
-	.titles {
+	.o-title {
 		color: $dark_grey;
 	}
-	.content {
-		form {
-			float: left;
-			text-align: left;
-			max-width: 100%;
-			input::placeholder, textarea::placeholder {
-			  color: $grey;
-			}
-			input[placeholder$="name"], 
-			input[placeholder$="email"] {				
-				display: inline-block;
-				padding: 1.1em 0 1.1em 1.1em;
-				margin: 0 1.5em 1.5em 0;
-				border: 1.5px solid $grey;
-				font-style: italic;
-				font-size: .85em;
-				width: 215px;
-				max-width: 100%;
-			}
-			textarea{
-				display: block;
-				padding: .8em 0 9em .8em;
-				margin: 0 1.5em 1.5em 0;
-				border: 1.5px solid $grey;
-				font-style: italic;
-				font-size: .85em;
-				width: 450px;
-				max-width: 100%;
-				resize: none;
-			}
-			input[type="submit"] {
-				float: right;
-				margin-right: 1.7em;
-				padding: 1em 2.4em .7em;
-				text-transform: uppercase;
-				font-size: .8em;
-				font-weight: 400;
-				letter-spacing: .15em;
-			}
+}
+.c-contact__content {
+	form {
+		float: left;
+		text-align: left;
+		max-width: 100%;
+		input::placeholder, textarea::placeholder {
+		  color: $grey;
 		}
-		.info {
-			text-align: left;
-			list-style: none;
-			width: 200px;
+		input[placeholder$="name"], 
+		input[placeholder$="email"] {				
+			display: inline-block;
+			padding: 1.1em 0 1.1em 1.1em;
+			margin: 0 1.5em 1.5em 0;
+			border: 1.5px solid $grey;
+			font-style: italic;
+			font-size: .85em;
+			width: 215px;
+			max-width: 100%;
+		}
+		textarea{
+			display: block;
+			padding: .8em 0 9em .8em;
+			margin: 0 1.5em 1.5em 0;
+			border: 1.5px solid $grey;
+			font-style: italic;
+			font-size: .85em;
+			width: 450px;
+			max-width: 100%;
+			resize: none;
+		}
+		input[type="submit"] {
+			float: right;
+			margin-right: 1.7em;
+			padding: 1em 2.4em .7em;
+			text-transform: uppercase;
+			font-size: .8em;
+			font-weight: 400;
+			letter-spacing: .15em;
+		}
+	}
+	.info {
+		text-align: left;
+		list-style: none;
+		width: 200px;
+		margin: 0;
+		padding: 0;
+		float: left;
+		color: $dark_grey;
+		p {
+			text-transform: uppercase;
 			margin: 0;
-			padding: 0;
-			float: left;
-			color: $dark_grey;
-			p {
-				text-transform: uppercase;
-				margin: 0;
-				padding-bottom: 1em;
-			}
-			li {
-			 	padding-bottom: 1em;
-			 	font-size: .95em;
-			}
+			padding-bottom: 1em;
+		}
+		li {
+		 	padding-bottom: 1em;
+		 	font-size: .95em;
 		}
 	}
 }
-footer {
+
+//footer
+.c-footer {
 	background: $dark_blue;
 	padding: 1.5em 0;
 	position: relative;
-	p {
-		color: white;
-		font-weight: 400;
-		font-size: .95em;
-		float: left;
-		margin: 0 .5em 0 0;
-		padding-top: 1em;
-		span {
-			margin: 0 .2em;
-		}
-	}
-	button {
-		float: right;
-		width: 44px;
-		height: 44px;
-		padding: 0;
-		border: none;
-		outline: none;
-		cursor: pointer;
-		img {
-			display: block;
-		}
+}
+.c-footer__btn {
+	float: right;
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+.c-footer__copy {
+	color: white;
+	font-weight: 400;
+	font-size: .95em;
+	float: left;
+	margin: 0 .5em 0 0;
+	padding-top: 1em;
+	.c-copy__char {
+		margin: 0 .2em;
 	}
 }
 @import 'responsive';
