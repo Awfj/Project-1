@@ -77,7 +77,7 @@ $(document).ready(function() {
 	//scroll down
 	$('.scroll_down').click(function() {
 		var portfolioPos = $('#portfolio').offset().top;
-		$('body, html').animate({scrollTop: portfolioPos}, 800);
+		$('body, html').animate({scrollTop: portfolioPos - $('#main_header').outerHeight()}, 800);
 	});
 
 	//portfolio - filter

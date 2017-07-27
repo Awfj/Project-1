@@ -29,7 +29,7 @@ body {
   margin: 0 auto;
   text-align: center; }
 
-#portfolio, #about, .c-contact {
+#portfolio, #about, #contact {
   padding: 3.5em 0; }
 
 .o-title h2, .o-title p {
@@ -246,9 +246,9 @@ body {
         line-height: 1.3;
         margin: 0 1em; }
 
-.c-contact {
+#contact {
   background: #ecf0f1; }
-  .c-contact .o-title {
+  #contact .o-title {
     color: #444; }
 
 .c-contact__content form {
@@ -368,25 +368,25 @@ body {
     #about .content .workers .some_text p {
       font-size: .9em;
       line-height: 1.2; }
-  .c-contact .c-contact__content form {
+  #contact .c-contact__content form {
     float: none;
     text-align: center; }
-    .c-contact .c-contact__content form input[placeholder$="name"],
-    .c-contact .c-contact__content form input[placeholder$="email"] {
+    #contact .c-contact__content form input[placeholder$="name"],
+    #contact .c-contact__content form input[placeholder$="email"] {
       padding: 1.1em 0 1.1em 1.1em;
       margin: 0 .7em 1.5em; }
-    .c-contact .c-contact__content form textarea {
+    #contact .c-contact__content form textarea {
       margin: 0 auto 1.5em; }
-    .c-contact .c-contact__content form input[type="submit"] {
+    #contact .c-contact__content form input[type="submit"] {
       float: none;
       margin: 0 auto 2.5em; }
-  .c-contact .c-contact__content .info {
+  #contact .c-contact__content .info {
     text-align: center;
     width: initial;
     float: none; }
-    .c-contact .c-contact__content .info p {
+    #contact .c-contact__content .info p {
       display: none; }
-    .c-contact .c-contact__content .info li {
+    #contact .c-contact__content .info li {
       line-height: 1.5em;
       padding-bottom: 0; } }
 
